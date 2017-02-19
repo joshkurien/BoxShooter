@@ -33,6 +33,8 @@ public class GameManager : MonoBehaviour {
 
 	private float currentTime;
 
+	public bool isLastLevel = false;
+
 	// setup the game
 	void Start () {
 
@@ -87,6 +89,10 @@ public class GameManager : MonoBehaviour {
 		// activate the playAgainButtons gameObject, if it is set 
 		if (playAgainButtons)
 			playAgainButtons.SetActive (true);
+
+		// Next Level is Alias for restart in this case
+		if (isLastLevel)
+			nextLevelButtons.SetActive (true);
 
 		// reduce the pitch of the background music, if it is set 
 		if (musicAudioSource)
